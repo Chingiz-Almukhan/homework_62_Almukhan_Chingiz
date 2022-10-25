@@ -1,284 +1,729 @@
 [
-  {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "password": "pbkdf2_sha256$390000$IMKKwcWUEzwPUwB3SyOqg5$dXKXjlZ1p0G/VBNZCysdH6Hvj3wS3YfY2vochXMPjJQ=",
-      "last_login": "2022-10-21T02:26:09.804Z",
-      "is_superuser": true,
-      "username": "root",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2022-10-14T09:40:04.509Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 1,
-    "fields": {
-      "summary": "Закончить домашку",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:43:32.608Z",
-      "changed_at": "2022-10-14T09:43:32.608Z",
-      "is_deleted": false,
-      "type": [
-        1
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "manager",
+    "permissions": [
+      [
+        "add_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "change_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "delete_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "view_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "add_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "change_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "delete_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "view_project",
+        "tracker",
+        "project"
       ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 2,
-    "fields": {
-      "summary": "Встать раньше обеда",
-      "description": "",
-      "status": 2,
-      "project": 2,
-      "created_at": "2022-10-14T09:43:51.164Z",
-      "changed_at": "2022-10-14T09:43:51.164Z",
-      "is_deleted": false,
-      "type": [
-        2
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 3,
-    "fields": {
-      "summary": "Поесть",
-      "description": "",
-      "status": 3,
-      "project": 3,
-      "created_at": "2022-10-14T09:44:06.729Z",
-      "changed_at": "2022-10-14T09:44:06.729Z",
-      "is_deleted": false,
-      "type": [
-        3
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 4,
-    "fields": {
-      "summary": "test",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:44:22.756Z",
-      "changed_at": "2022-10-14T09:44:22.756Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 5,
-    "fields": {
-      "summary": "test vol2",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:44:41.878Z",
-      "changed_at": "2022-10-14T09:44:41.878Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 6,
-    "fields": {
-      "summary": "test vol3",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:44:53.621Z",
-      "changed_at": "2022-10-14T09:47:10.462Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 7,
-    "fields": {
-      "summary": "test vol 4",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:45:03.436Z",
-      "changed_at": "2022-10-14T09:51:34.267Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 8,
-    "fields": {
-      "summary": "test vol 2",
-      "description": "",
-      "status": 1,
-      "project": 2,
-      "created_at": "2022-10-14T09:45:14.868Z",
-      "changed_at": "2022-10-14T09:45:14.868Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 9,
-    "fields": {
-      "summary": "test vol 7",
-      "description": "",
-      "status": 1,
-      "project": 2,
-      "created_at": "2022-10-14T09:45:27.535Z",
-      "changed_at": "2022-10-14T09:45:27.535Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 10,
-    "fields": {
-      "summary": "test vol 111",
-      "description": "",
-      "status": 1,
-      "project": 3,
-      "created_at": "2022-10-14T09:45:39.260Z",
-      "changed_at": "2022-10-14T09:45:39.260Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 11,
-    "fields": {
-      "summary": "test vol 777",
-      "description": "",
-      "status": 1,
-      "project": 3,
-      "created_at": "2022-10-14T09:45:51.929Z",
-      "changed_at": "2022-10-14T09:49:20.088Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.issuetracker",
-    "pk": 12,
-    "fields": {
-      "summary": "Поспать",
-      "description": "",
-      "status": 1,
-      "project": 1,
-      "created_at": "2022-10-14T09:46:52.666Z",
-      "changed_at": "2022-10-20T23:25:46.234Z",
-      "is_deleted": false,
-      "type": [
-        1
-      ]
-    }
-  },
-  {
-    "model": "tracker.status",
-    "pk": 1,
-    "fields": {
-      "name": "В процессе"
-    }
-  },
-  {
-    "model": "tracker.status",
-    "pk": 2,
-    "fields": {
-      "name": "Выполнено"
-    }
-  },
-  {
-    "model": "tracker.status",
-    "pk": 3,
-    "fields": {
-      "name": "Новый"
-    }
-  },
-  {
-    "model": "tracker.type",
-    "pk": 1,
-    "fields": {
-      "name": "Задача"
-    }
-  },
-  {
-    "model": "tracker.type",
-    "pk": 2,
-    "fields": {
-      "name": "Ошибка"
-    }
-  },
-  {
-    "model": "tracker.type",
-    "pk": 3,
-    "fields": {
-      "name": "Улучшение"
-    }
-  },
-  {
-    "model": "tracker.project",
-    "pk": 1,
-    "fields": {
-      "name": "Домашняя работа",
-      "start_date": "2022-10-14",
-      "end_date": "2022-10-14",
-      "description": ""
-    }
-  },
-  {
-    "model": "tracker.project",
-    "pk": 2,
-    "fields": {
-      "name": "Контрольная работа",
-      "start_date": "2022-10-12",
-      "end_date": "2022-10-27",
-      "description": ""
-    }
-  },
-  {
-    "model": "tracker.project",
-    "pk": 3,
-    "fields": {
-      "name": "Лабораторная работа",
-      "start_date": "2022-10-16",
-      "end_date": "2022-10-29",
-      "description": ""
-    }
+    ]
   }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "lead",
+    "permissions": [
+      [
+        "add_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "change_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "delete_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "view_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "change_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "view_project",
+        "tracker",
+        "project"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 3,
+  "fields": {
+    "name": "dev",
+    "permissions": [
+      [
+        "add_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "change_issuetracker",
+        "tracker",
+        "issuetracker"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 4,
+  "fields": {
+    "name": "root",
+    "permissions": [
+      [
+        "add_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "change_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "delete_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "view_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_user",
+        "auth",
+        "user"
+      ],
+      [
+        "change_user",
+        "auth",
+        "user"
+      ],
+      [
+        "delete_user",
+        "auth",
+        "user"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ],
+      [
+        "add_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "change_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "delete_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "view_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "view_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "add_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "change_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "delete_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "view_issuetracker",
+        "tracker",
+        "issuetracker"
+      ],
+      [
+        "add_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "change_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "delete_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "view_project",
+        "tracker",
+        "project"
+      ],
+      [
+        "add_status",
+        "tracker",
+        "status"
+      ],
+      [
+        "change_status",
+        "tracker",
+        "status"
+      ],
+      [
+        "delete_status",
+        "tracker",
+        "status"
+      ],
+      [
+        "view_status",
+        "tracker",
+        "status"
+      ],
+      [
+        "add_type",
+        "tracker",
+        "type"
+      ],
+      [
+        "change_type",
+        "tracker",
+        "type"
+      ],
+      [
+        "delete_type",
+        "tracker",
+        "type"
+      ],
+      [
+        "view_type",
+        "tracker",
+        "type"
+      ]
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 1,
+  "fields": {
+    "summary": "Закончить домашку",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:43:32.608Z",
+    "changed_at": "2022-10-25T04:52:37.729Z",
+    "is_deleted": false,
+    "type": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 2,
+  "fields": {
+    "summary": "Встать раньше обеда",
+    "description": "",
+    "status": 2,
+    "project": 2,
+    "created_at": "2022-10-14T09:43:51.164Z",
+    "changed_at": "2022-10-14T09:43:51.164Z",
+    "is_deleted": false,
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 3,
+  "fields": {
+    "summary": "Поесть",
+    "description": "",
+    "status": 3,
+    "project": 3,
+    "created_at": "2022-10-14T09:44:06.729Z",
+    "changed_at": "2022-10-14T09:44:06.729Z",
+    "is_deleted": false,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 4,
+  "fields": {
+    "summary": "test",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:44:22.756Z",
+    "changed_at": "2022-10-14T09:44:22.756Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 5,
+  "fields": {
+    "summary": "test vol2",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:44:41.878Z",
+    "changed_at": "2022-10-14T09:44:41.878Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 6,
+  "fields": {
+    "summary": "test vol3",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:44:53.621Z",
+    "changed_at": "2022-10-14T09:47:10.462Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 7,
+  "fields": {
+    "summary": "test vol 4",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:45:03.436Z",
+    "changed_at": "2022-10-14T09:51:34.267Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 8,
+  "fields": {
+    "summary": "test vol 2",
+    "description": "",
+    "status": 1,
+    "project": 2,
+    "created_at": "2022-10-14T09:45:14.868Z",
+    "changed_at": "2022-10-14T09:45:14.868Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 9,
+  "fields": {
+    "summary": "test vol 7",
+    "description": "",
+    "status": 1,
+    "project": 2,
+    "created_at": "2022-10-14T09:45:27.535Z",
+    "changed_at": "2022-10-14T09:45:27.535Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 10,
+  "fields": {
+    "summary": "test vol 111",
+    "description": "",
+    "status": 1,
+    "project": 3,
+    "created_at": "2022-10-14T09:45:39.260Z",
+    "changed_at": "2022-10-14T09:45:39.260Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 11,
+  "fields": {
+    "summary": "test vol 777",
+    "description": "",
+    "status": 1,
+    "project": 3,
+    "created_at": "2022-10-14T09:45:51.929Z",
+    "changed_at": "2022-10-25T10:14:37.258Z",
+    "is_deleted": true,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 12,
+  "fields": {
+    "summary": "Поспать",
+    "description": "",
+    "status": 1,
+    "project": 1,
+    "created_at": "2022-10-14T09:46:52.666Z",
+    "changed_at": "2022-10-20T23:25:46.234Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issuetracker",
+  "pk": 13,
+  "fields": {
+    "summary": "test",
+    "description": "",
+    "status": 1,
+    "project": 3,
+    "created_at": "2022-10-25T10:15:48.213Z",
+    "changed_at": "2022-10-25T10:15:48.213Z",
+    "is_deleted": false,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 1,
+  "fields": {
+    "name": "В процессе"
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 2,
+  "fields": {
+    "name": "Выполнено"
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 3,
+  "fields": {
+    "name": "Новый"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 1,
+  "fields": {
+    "name": "Задача"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 2,
+  "fields": {
+    "name": "Ошибка"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 3,
+  "fields": {
+    "name": "Улучшение"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$IMKKwcWUEzwPUwB3SyOqg5$dXKXjlZ1p0G/VBNZCysdH6Hvj3wS3YfY2vochXMPjJQ=",
+    "last_login": "2022-10-25T10:45:34.384Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-10-14T09:40:04Z",
+    "groups": [
+      [
+        "root"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$Ks47S37tJJqB7xXOI2AxAW$b8xcF65WJZN6zQCZcRCT1m3B0qyE1q/Spwb6rj5FE4A=",
+    "last_login": "2022-10-25T06:06:53.833Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "",
+    "email": "test@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T04:15:47.235Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$LP9t1R0pK2XfokGUtqwZYn$CykFzpErNanK07ThoSGZe3tgujIevPfupdUtwztd/+U=",
+    "last_login": "2022-10-25T10:45:58.750Z",
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "manager",
+    "last_name": "",
+    "email": "test@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T09:06:55Z",
+    "groups": [
+      [
+        "manager"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$LJK0hKMu06AsDAMS0nzL9s$UteY6xRNrPZQlW/kmUFNAF+CFXgV3eHM4fvw4me4VY8=",
+    "last_login": "2022-10-25T10:15:19.091Z",
+    "is_superuser": false,
+    "username": "lead",
+    "first_name": "lead",
+    "last_name": "",
+    "email": "test@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T09:07:10Z",
+    "groups": [
+      [
+        "lead"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$U7oQY2lGkfvSxUzwpS4Y7O$V+P/ZaX2BWcg5BltCOFpcSCcNLhbK4RFNKIH4ncFse8=",
+    "last_login": "2022-10-25T10:15:06.649Z",
+    "is_superuser": false,
+    "username": "dev",
+    "first_name": "dev",
+    "last_name": "",
+    "email": "dev@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-10-25T09:07:29Z",
+    "groups": [
+      [
+        "dev"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 1,
+  "fields": {
+    "name": "Домашняя работа",
+    "start_date": "2022-10-14",
+    "end_date": "2022-10-14",
+    "description": "",
+    "users": [
+      [
+        "root"
+      ],
+      [
+        "dev"
+      ]
+    ]
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 2,
+  "fields": {
+    "name": "Контрольная работа",
+    "start_date": "2022-10-12",
+    "end_date": "2022-10-27",
+    "description": "",
+    "users": [
+      [
+        "test"
+      ],
+      [
+        "lead"
+      ]
+    ]
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 3,
+  "fields": {
+    "name": "Лабораторная работа",
+    "start_date": "2022-10-16",
+    "end_date": "2022-10-29",
+    "description": "",
+    "users": [
+      [
+        "test"
+      ],
+      [
+        "manager"
+      ]
+    ]
+  }
+}
 ]
