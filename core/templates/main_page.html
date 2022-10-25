@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Main {% endblock %}
+{% block content %}
+    <h4 class="text-center my-3 pb-3">Список Задач</h4>
+    {% include 'partial/search.html' %}
+    <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+        <div class="col-12">
+            <a href="{% url 'projects' %}" type="submit" class="btn btn-primary">Проекты</a>
+            {% if user.is_authenticated %}
+
+
+                <a href="{% url 'logout' %}" type="submit" class="btn btn-dark">Выход</a>
+                <div class="text-center mt-4">
+                <span class="">Привет, {{ user.username }}!</span>
+                </div>
+
+
+            {% else %}
+                <a href="{% url 'login' %}" type="submit" class="btn btn-dark">Вход</a>
+                <a href="{% url 'register' %}" type="submit" class="btn btn-dark">Регистрация</a>
+            {% endif %}
+        </div>
+    </form>
+    <table class="table mb-4">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Задачи</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Тип</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <th scope="row">{{ article.pk }}</th>
+                <td>{{ article.summary }}</td>
+                <td>{{ article.status }}</td>
+                <td>{% for type in article.type.all %}{{ type.name }} {% if not forloop.last %},
+                {% endif %} {% endfor %}</td>
+                <td><a href="{% url 'task' article.pk %}" class="btn btn-dark">Подробнее</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td>
+                    Задачи не найдены
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+    </table>
+
+{% endblock %}
