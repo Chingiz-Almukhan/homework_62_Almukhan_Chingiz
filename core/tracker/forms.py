@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import CheckboxInput
 
 from tracker.models import Project
 from tracker.models.issue_tracker import IssueTracker
@@ -45,3 +46,18 @@ class AddProjectForm(forms.ModelForm):
             {'class': 'form-control', 'min': "2018-01-01", 'max': "2090-12-31"})
         self.fields['end_date'].widget.attrs.update(
             {'class': 'form-control', 'min': "2018-01-01", 'max': "2090-12-31", 'type': 'date'})
+
+
+class EditForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['users']
+
+
+# class EditProjectForm(forms.ModelForm):
+#     start_date = forms.DateField(widget=DateInput, label='Дата начала')
+#     end_date = forms.DateField(widget=DateInput, label='Дата окончания')
+#
+#     class Meta:
+#         model = Project
+#         fields = ['name', 'start_date', 'end_date', 'description']

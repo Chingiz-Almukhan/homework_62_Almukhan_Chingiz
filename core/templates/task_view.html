@@ -8,30 +8,46 @@
             <div class="col text-center">
                 <a href="{% url 'main' %}" type="submit" class="btn btn-primary">Главная страница</a>
                 {% if user.is_authenticated %}
-                <a href="{% url 'edit' task.id %}" type="submit" class="btn btn-warning">Редактировать</a>
+                    {% if perms.tracker.change_issuetracker %}
+                        {% for user in task.project.users.all %}
+                            {% if user == request.user %}
+                                <a href="{% url 'edit' task.id %}" type="submit"
+                                   class="btn btn-warning">Редактировать</a>
+                            {% endif %}
+                        {% endfor %}
 
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Удалить
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                     aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Вы уверены?</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="col-12">
-                                    <a href="{% url 'main' %}" type="submit" class="btn btn-primary">Вернуться на
-                                        главную</a>
-                                    <input type="submit" class="btn btn-danger" value="Да">
+                    {% endif %}
+                    {% if perms.tracker.delete_issuetracker %}
+                        {% for user in task.project.users.all %}
+                            {% if user == request.user %}
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                    Удалить
+                                </button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Вы уверены?</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="col-12">
+                                                    <a href="{% url 'main' %}" type="submit" class="btn btn-primary">Вернуться
+                                                        на
+                                                        главную</a>
+                                                    <input type="submit" class="btn btn-danger" value="Да">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 {% endif %}
 
             </div>

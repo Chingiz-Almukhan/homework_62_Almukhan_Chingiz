@@ -4,11 +4,13 @@ from django.urls import reverse_lazy
 
 from tracker.forms import AddEditForm
 from tracker.models.issue_tracker import IssueTracker
+from tracker.views import CustomUserPassesMixin
 
 
-class EditView(LoginRequiredMixin, UpdateView):
+class EditView(CustomUserPassesMixin, LoginRequiredMixin, UpdateView):
     template_name = "edit_task.html"
     form_class = AddEditForm
     model = IssueTracker
     success_url = reverse_lazy('main')
     context_object_name = 'article'
+    groups = ['dev', 'lead', 'manager', 'root']

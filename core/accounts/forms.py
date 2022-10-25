@@ -18,11 +18,13 @@ class MyUserCreationForm(forms.ModelForm):
         first_name = self.cleaned_data.get('first_name')
         if len(first_name) == 0:
             raise forms.ValidationError('Введите имя!')
+        return first_name
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if len(email) == 0:
             raise forms.ValidationError('Введите почту!')
+        return email
 
     def clean(self):
         cleaned_data = super().clean()

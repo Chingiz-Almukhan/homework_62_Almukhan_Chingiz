@@ -1,14 +1,17 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
 from tracker.forms import AddProjectForm
+from tracker.models import Project
+from tracker.views import CustomUserPassesMixin
 
-from tracker.views.base_project import ProjectView
 
-
-class AddProjectView(LoginRequiredMixin, CreateView):
+class AddProjectView(CustomUserPassesMixin, LoginRequiredMixin, CreateView):
     template_name = 'add_project.html'
     success_url = reverse_lazy('projects')
-    model = ProjectView
+    model = Project
     form_class = AddProjectForm
+    groups = ['manager', 'root']
+
+
