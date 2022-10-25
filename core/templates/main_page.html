@@ -4,7 +4,7 @@
     <h4 class="text-center my-3 pb-3">Список Задач</h4>
     {% include 'partial/search.html' %}
     <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
-        <div class="col-12">
+        <div class="col-12 mt-4">
             <a href="{% url 'projects' %}" type="submit" class="btn btn-primary">Проекты</a>
             {% if user.is_authenticated %}
 
